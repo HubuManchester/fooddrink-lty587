@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDrinkApp.Views.SettingsPage"
+             Title="Settings"
+             BackgroundColor="#0A0A0A">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="25">
+
+            <Label Text="⚙️ Settings"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#D4AF37"
+                   HorizontalOptions="Center"/>
+
+            <Frame BackgroundColor="#1C1C1C" CornerRadius="12" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="🌙 Dark Mode" 
+                           TextColor="#D4AF37" 
+                           FontAttributes="Bold"/>
+                    <Label Text="Turns interface to dark theme" 
+                           TextColor="#888888" 
+                           FontSize="12"/>
+                    <Switch x:Name="DarkModeSwitch" 
+                            Toggled="OnDarkModeToggled"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#1C1C1C" CornerRadius="12" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="🔤 Font Size" 
+                           TextColor="#D4AF37" 
+                           FontAttributes="Bold"/>
+                    <Label Text="Adjust font size" 
+                           TextColor="#888888" 
+                           FontSize="12"/>
+
+                    <Label x:Name="PreviewLabel" 
+                           Text="Font Preview: Food Diary" 
+                           FontSize="16"
+                           TextColor="#D4AF37"
+                           HorizontalOptions="Center"/>
+
+                    <Slider x:Name="FontSizeSlider" 
+                            Minimum="0.8" 
+                            Maximum="1.5" 
+                            Value="1.0"
+                            ValueChanged="OnFontSizeChanged"/>
+
+                    <Label x:Name="FontSizeLabel" 
+                           Text="Current: Standard" 
+                           FontSize="12"
+                           TextColor="#888888"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Device Info Button -->
+            <Frame BackgroundColor="#1C1C1C" CornerRadius="12" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="📱 Device Information" 
+                           TextColor="#D4AF37" 
+                           FontAttributes="Bold"/>
+                    <Label Text="Check device model, battery, etc." 
+                           TextColor="#888888" 
+                           FontSize="12"/>
+                    <Button Text="Show Device Info"
+                            Clicked="OnDeviceInfoClicked"
+                            BackgroundColor="#D4AF37"
+                            TextColor="#0A0A0A"
+                            HeightRequest="40"
+                            CornerRadius="20"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#1C1C1C" CornerRadius="12" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="ℹ️ About" 
+                           TextColor="#D4AF37" 
+                           FontAttributes="Bold"/>
+                    <Label Text="Food Diary v1.0" 
+                           TextColor="#888888"/>
+                    <Label Text="Based on .NET MAUI" 
+                           TextColor="#888888"/>
+                    <Label Text="Follows WCAG Accessibility Guidelines" 
+                           TextColor="#D4AF37"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDrinkApp.Views.RegisterPage"
+             Title="注册"
+             BackgroundColor="#0D0D0D">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+
+            <Label Text="创建账号" 
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#C9A03D"
+                   HorizontalOptions="Center"/>
+
+            <Frame BackgroundColor="#1A1A1A" Padding="20" CornerRadius="15">
+                <VerticalStackLayout Spacing="15">
+
+                    <Entry x:Name="UsernameEntry" 
+                           Placeholder="用户名（必填）"
+                           PlaceholderColor="#888888"
+                           TextColor="#F5F5F5"
+                           BackgroundColor="#2A2A2A"
+                           HeightRequest="50"
+                           FontSize="14"/>
+
+                    <Entry x:Name="EmailEntry" 
+                           Placeholder="邮箱（必填）"
+                           PlaceholderColor="#888888"
+                           TextColor="#F5F5F5"
+                           BackgroundColor="#2A2A2A"
+                           HeightRequest="50"
+                           FontSize="14"/>
+
+                    <Entry x:Name="PasswordEntry" 
+                           Placeholder="密码（至少6位）"
+                           PlaceholderColor="#888888"
+                           IsPassword="True"
+                           TextColor="#F5F5F5"
+                           BackgroundColor="#2A2A2A"
+                           HeightRequest="50"
+                           FontSize="14"/>
+
+                    <Entry x:Name="ConfirmPasswordEntry" 
+                           Placeholder="确认密码"
+                           PlaceholderColor="#888888"
+                           IsPassword="True"
+                           TextColor="#F5F5F5"
+                           BackgroundColor="#2A2A2A"
+                           HeightRequest="50"
+                           FontSize="14"/>
+
+                    <Button Text="注册" 
+                            Clicked="OnRegisterClicked"
+                            BackgroundColor="#C9A03D"
+                            TextColor="#0D0D0D"
+                            HeightRequest="50"
+                            CornerRadius="25"/>
+
+                    <Button Text="返回登录" 
+                            Clicked="OnBackClicked"
+                            BackgroundColor="Transparent"
+                            TextColor="#C9A03D"
+                            HeightRequest="40"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

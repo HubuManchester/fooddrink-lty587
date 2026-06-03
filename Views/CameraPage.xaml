@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDrinkApp.Views.CameraPage"
+             Title="拍照记录"
+             BackgroundColor="#0A0A0A">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="25">
+
+            <Label Text="📸 拍照记录"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#D4AF37"
+                   HorizontalOptions="Center"/>
+
+            <!-- 照片预览区 -->
+            <Frame BackgroundColor="#1C1C1C" 
+                   CornerRadius="15" 
+                   HeightRequest="250"
+                   Padding="10">
+                <Image x:Name="PreviewImage" 
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSelectPhotoClicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+
+            <Label Text="👇 点击图片选择照片" 
+                   TextColor="#888888" 
+                   FontSize="12"
+                   HorizontalOptions="Center"/>
+
+            <!-- 美食名称输入 -->
+            <Frame BackgroundColor="#1C1C1C" CornerRadius="12" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="🍽️ 美食名称" 
+                           TextColor="#D4AF37" 
+                           FontAttributes="Bold"/>
+                    <Entry x:Name="FoodNameEntry"
+                           Placeholder="例如：松露意面、威灵顿牛排..."
+                           PlaceholderColor="#888888"
+                           TextColor="#F5F5F5"
+                           BackgroundColor="#2A2A2A"
+                           HeightRequest="50"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- 备注输入 -->
+            <Frame BackgroundColor="#1C1C1C" CornerRadius="12" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="📝 备注（可选）" 
+                           TextColor="#D4AF37" 
+                           FontAttributes="Bold"/>
+                    <Entry x:Name="NotesEntry"
+                           Placeholder="记录一下味道..."
+                           PlaceholderColor="#888888"
+                           TextColor="#F5F5F5"
+                           BackgroundColor="#2A2A2A"
+                           HeightRequest="50"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- 保存按钮 -->
+            <Button Text="💾 保存到美食记录"
+                    Clicked="OnSaveRecordClicked"
+                    BackgroundColor="#D4AF37"
+                    TextColor="#0A0A0A"
+                    HeightRequest="55"/>
+
+            <!-- 提示 -->
+            <Label Text="提示：点击图片可以从相册选择照片" 
+                   TextColor="#666666" 
+                   FontSize="10"
+                   HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

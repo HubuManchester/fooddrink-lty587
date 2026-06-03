@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDrinkApp.Views.ProfilePage"
+             Title="我的"
+             BackgroundColor="#0D0D0D">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="25">
+
+            <!-- 头像 -->
+            <Frame HeightRequest="100" WidthRequest="100" 
+                   CornerRadius="50" 
+                   HorizontalOptions="Center"
+                   BackgroundColor="#C9A03D">
+                <Label Text="👨‍🍳" FontSize="50" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Frame>
+
+            <Label x:Name="UserNameLabel" 
+                   Text="美食家" 
+                   FontSize="22" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"
+                   TextColor="#C9A03D"/>
+
+            <!-- 统计 -->
+            <Grid ColumnDefinitions="*, *, *" ColumnSpacing="10">
+                <Frame>
+                    <VerticalStackLayout>
+                        <Label Text="23" FontSize="24" FontAttributes="Bold" TextColor="#C9A03D" HorizontalOptions="Center"/>
+                        <Label Text="餐厅" FontSize="12" TextColor="#888" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame Grid.Column="1">
+                    <VerticalStackLayout>
+                        <Label Text="45" FontSize="24" FontAttributes="Bold" TextColor="#C9A03D" HorizontalOptions="Center"/>
+                        <Label Text="菜品" FontSize="12" TextColor="#888" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame Grid.Column="2">
+                    <VerticalStackLayout>
+                        <Label Text="128" FontSize="24" FontAttributes="Bold" TextColor="#C9A03D" HorizontalOptions="Center"/>
+                        <Label Text="粉丝" FontSize="12" TextColor="#888" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- 设置选项 -->
+            <Frame>
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="⚙️ 设置中心" FontSize="16" FontAttributes="Bold" TextColor="#C9A03D"/>
+                    <Label Text="🌙 深色模式" FontSize="14" TextColor="#F5F5F5">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnDarkModeTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="🔤 字体大小" FontSize="14" TextColor="#F5F5F5">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnFontSizeTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="📞 联系管家" FontSize="14" TextColor="#F5F5F5">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnContactTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="🚪 退出登录" FontSize="14" TextColor="#C9A03D">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLogoutTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="© 2025 ÉPICURE | 米其林星厨推荐"
+                   FontSize="10"
+                   TextColor="#555"
+                   HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
